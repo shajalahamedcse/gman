@@ -40,3 +40,7 @@ func (p *Profile) validate() error {
 
 	return nil
 }
+
+func (p *Profile) String() string {
+	return p.Name
+}

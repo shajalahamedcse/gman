@@ -49,7 +49,7 @@ func parse(s string) ([]Profile, error) {
 	lines := strings.Split(strings.TrimSpace(s), "\n")
 	var profiles []Profile
 
-	for i := 0; i <= len(lines)-3; i += 3 {
+	for i := 0; i < len(lines)-2; i += 3 {
 
 		var p Profile
 		p.Name = lines[i]
@@ -58,6 +58,7 @@ func parse(s string) ([]Profile, error) {
 		filterKey(lines[i+2], &p)
 
 		//ToDO profile validation
+
 		profiles = append(profiles, p)
 	}
 	return profiles, nil
